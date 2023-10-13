@@ -1,16 +1,32 @@
-#Implement a recursive function to calculate the  factorial of a given number
+# Python program to create Bankaccount class
+# with both a deposit() and a withdraw() function
+class Bank_Account:
+	def __init__(self):
+		self.balance=0
+		print("Hello!!! Welcome to the Deposit & Withdrawal Machine")
 
+	def deposit(self):
+		amount=float(input("Enter amount to be Deposited: "))
+		self.balance += amount
+		print("\n Amount Deposited:",amount)
 
-def fact(n):
-   if n == 0 or n == 1:
-    return 1
-   else:
-     return n* fact(n - 1)
+	def withdraw(self):
+		amount = float(input("Enter amount to be Withdrawn: "))
+		if self.balance>=amount:
+			self.balance-=amount
+			print("\n You Withdrew:", amount)
+		else:
+			print("\n Insufficient balance ")
 
+	def display(self):
+		print("\n Net Available Balance=",self.balance)
 
-number =  int(input("Enter a value:"))
+# Driver code
 
-res =  fact(number)
-print("The factorial of {} is {}.".format(number, res))
+# creating an object of class
+s = Bank_Account()
 
-    
+# Calling functions with that class object
+s.deposit()
+s.withdraw()
+s.display()
